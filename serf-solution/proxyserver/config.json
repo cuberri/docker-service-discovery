@@ -1,0 +1,15 @@
+{
+    "server": {
+        "accessLog": "/var/log/nginx/access.log",
+        "port": 80,
+        "workers": 2,
+        "maxSockets": 100,
+        "deadBackendTTL": 10,
+        "tcpTimeout": 10,
+        "retryOnError": 3,
+        "deadBackendOn500": true,
+        "httpKeepAlive": false
+    },
+    "redisHost": "127.0.0.1",
+    "redisPort": 6379
+}
