@@ -43,7 +43,7 @@ RUN chmod +x /home/frontserver/serf-event-handler.sh
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # cleaning
-#RUN apt-get autoremove -y --purge curl
+RUN apt-get autoremove -y --purge curl unzip
 
 # Expose nginx port
 EXPOSE 8080

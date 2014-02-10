@@ -28,7 +28,7 @@ RUN curl -L -o /tmp/serf.zip https://dl.bintray.com/mitchellh/serf/0.3.0_linux_a
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Boyscout rule
-#RUN apt-get autoremove -y --purge curl unzip
+RUN apt-get autoremove -y --purge curl unzip
 RUN rm -rf /tmp/*
 
 EXPOSE 8080

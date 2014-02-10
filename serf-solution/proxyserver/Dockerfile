@@ -35,7 +35,7 @@ RUN chmod +x /home/proxyserver/serf-event-handler.sh
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # cleaning
-#RUN apt-get autoremove -y --purge curl
+RUN apt-get autoremove -y --purge curl unzip
 
 # Expose squid port
 EXPOSE 80

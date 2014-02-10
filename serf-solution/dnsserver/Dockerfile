@@ -29,7 +29,7 @@ RUN chmod +x /home/dnsserver/serf-event-handler.sh
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Boyscout rule
-#RUN apt-get autoremove -y --purge curl unzip
+RUN apt-get autoremove -y --purge curl unzip
 RUN rm -rf /tmp/*
 
 EXPOSE 53
