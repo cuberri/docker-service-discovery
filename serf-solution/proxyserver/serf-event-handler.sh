@@ -14,7 +14,7 @@ case ${SERF_EVENT} in
 				echo "  got new frontserver : ${ADDR} (${NODE}). Adding it to redis (if not already exists)"
 
 				# push an id for the frontend (i.e. the ROLE) if it does not exists yet
-				/usr/bin/redis-cli redis-cli lrange frontend:localhost 0 -1 | grep -q ${ROLE} || /usr/bin/redis-cli redis-cli rpush frontend:localhost ${ROLE}
+				/usr/bin/redis-cli lrange frontend:localhost 0 -1 | grep -q ${ROLE} || /usr/bin/redis-cli rpush frontend:localhost ${ROLE}
 
 				# push the backend it it does not exist yet
 				# let's use ADDR to avoid a useless DNS request (and grep collision too in this example :P)
