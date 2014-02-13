@@ -22,7 +22,7 @@ ADD bottle.py /home/appserver/bottle.py
 ADD appserver.py /home/appserver/appserver.py
 
 # install serf
-RUN curl -L -o /tmp/serf.zip https://dl.bintray.com/mitchellh/serf/0.3.0_linux_amd64.zip && unzip -d /usr/local/bin /tmp/serf.zip
+RUN curl -L -o /tmp/serf.zip https://dl.bintray.com/mitchellh/serf/0.4.1_linux_386.zip && unzip -d /usr/local/bin /tmp/serf.zip
 
 # configure supervisord
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf

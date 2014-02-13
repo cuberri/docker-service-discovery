@@ -35,7 +35,7 @@ RUN rm -f /etc/nginx/conf.d/*
 ADD appserver.conf /etc/nginx/conf.d/appserver.conf
 
 # install serf
-RUN curl -L -o /tmp/serf.zip https://dl.bintray.com/mitchellh/serf/0.3.0_linux_amd64.zip && unzip -d /usr/local/bin /tmp/serf.zip
+RUN curl -L -o /tmp/serf.zip https://dl.bintray.com/mitchellh/serf/0.4.1_linux_386.zip && unzip -d /usr/local/bin /tmp/serf.zip
 ADD serf-event-handler.sh /home/frontserver/serf-event-handler.sh
 RUN chmod +x /home/frontserver/serf-event-handler.sh
 

@@ -27,7 +27,7 @@ RUN mkdir -p /var/log/nginx
 ADD config.json /usr/local/lib/node_modules/hipache/config/config_proxyserver.json
 
 # install serf
-RUN curl -L -o /tmp/serf.zip https://dl.bintray.com/mitchellh/serf/0.3.0_linux_amd64.zip && unzip -d /usr/local/bin /tmp/serf.zip
+RUN curl -L -o /tmp/serf.zip https://dl.bintray.com/mitchellh/serf/0.4.1_linux_386.zip && unzip -d /usr/local/bin /tmp/serf.zip
 ADD serf-event-handler.sh /home/proxyserver/serf-event-handler.sh
 RUN chmod +x /home/proxyserver/serf-event-handler.sh
 
