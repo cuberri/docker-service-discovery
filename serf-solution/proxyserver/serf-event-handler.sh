@@ -26,10 +26,10 @@ case ${SERF_EVENT} in
 		;;
 	member-leave | member-failed )
 		while read line; do
+			NODE=$(echo ${line} | awk '{print $1}')
+			ADDR=$(echo ${line} | awk '{print $2}')
+			ROLE=$(echo ${line} | awk '{print $3}')
 			if [ "${ROLE}" = "frontserver" ]; then
-				NODE=$(echo ${line} | awk '{print $1}')
-				ROLE=$(echo ${line} | awk '{print $3}')
-				ROLES="$ROLE $ROLES"
 				entry="http://${ADDR}:8080"
 				echo "  removing frontserver ${ADDR} (${NODE}) from redis"
 				/usr/bin/redis-cli lrem frontend:localhost 0 $entry
