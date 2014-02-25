@@ -44,10 +44,10 @@ Technology stack
 
 Nodes consist of [docker](https://www.docker.io/) containers :
 * The `proxyserver` container is a [hipache](https://github.com/dotcloud/hipache) http proxy (backed by [redis](http://redis.io/)) ;
-* The `frontserver` container ise a [nginx](http://nginx.org/) web server ;
-* The `appserver` container is [bottle](http://bottlepy.org/) "hello" application ;
+* The `frontserver` container is a [nginx](http://nginx.org/) web server ;
+* The `appserver` container is a [bottle](http://bottlepy.org/) "hello" application ;
 
-In addition, the proposed solutions use :
+In addition, the proposed 'serf-based' solution uses :
 
 * A `dnsserver` container providing a DNS service using [dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) server ;
 * [serf](http://www.serfdom.io/) to provide service-discovery ;
