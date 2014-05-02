@@ -26,7 +26,7 @@ Starting and stopping nodes
 The containers are not pushed to any public repository. You need to use your repository our launch a temporary private one :
 
 ```
-$ docker run -d -p 5000:5000 samalba/docker-registry
+$ docker run -d -p 5000:5000 registry
 ...
 9947495abfcc7b408bc6f725f0852d5629823db49c9b891e6fa9b33eccb720e2
 
