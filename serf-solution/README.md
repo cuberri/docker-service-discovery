@@ -67,7 +67,7 @@ localhost:5000            dnsserver           0a27c9de88b3        13 minutes ago
 Running a `dnsserver` node :
 
 ```
-$ docker run -d -name dnsserver -h dnsserver -dns localhost localhost:5000:dnsserver
+$ docker run -d --name dnsserver -h dnsserver --dns localhost localhost:5000:dnsserver
 ```
 
 We have to get the IP Address of the container. It will be used as the serf cluster name for the other nodes to join.
@@ -83,7 +83,7 @@ $ echo $dns_server_ip
 Run an `appserver` node :
 
 ```
-$ docker run -d -name appserver1 -h appserver1 -dns $dns_server_ip localhost:5000:appserver
+$ docker run -d --name appserver1 -h appserver1 --dns $dns_server_ip localhost:5000:appserver
 ```
 
 --
@@ -91,7 +91,7 @@ $ docker run -d -name appserver1 -h appserver1 -dns $dns_server_ip localhost:500
 Run a `frontserver` node
 
 ```
-$ docker run -d -name frontserver1 -h frontserver1 -dns $dns_server_ip localhost:5000:frontserver
+$ docker run -d --name frontserver1 -h frontserver1 --dns $dns_server_ip localhost:5000:frontserver
 ```
 
 --
@@ -99,7 +99,7 @@ $ docker run -d -name frontserver1 -h frontserver1 -dns $dns_server_ip localhost
 Run a `proxyserver` node (note the -p option to expose the port 80 on which we'll make requests)
 
 ```
-$ docker run -d -name proxyserver -h proxyserver -dns $dns_server_ip -p 80:80 localhost:5000:proxyserver
+$ docker run -d --name proxyserver -h proxyserver --dns $dns_server_ip -p 80:80 localhost:5000:proxyserver
 ```
 
 --
@@ -142,9 +142,9 @@ What if we face an increase of the traffic ? We analyse the traffic and decide t
 Say we want to add one `frontserver` node and two `appserver` nodes. We just have to run as many containers as we want and name them differently :
 
 ```
-$ docker run -d -name frontserver2 -h frontserver2 -dns $dns_server_ip localhost:5000:frontserver
-$ docker run -d -name appserver2 -h appserver2 -dns $dns_server_ip localhost:5000:appserver
-$ docker run -d -name appserver3 -h appserver3 -dns $dns_server_ip localhost:5000:appserver
+$ docker run -d --name frontserver2 -h frontserver2 --dns $dns_server_ip localhost:5000:frontserver
+$ docker run -d --name appserver2 -h appserver2 --dns $dns_server_ip localhost:5000:appserver
+$ docker run -d --name appserver3 -h appserver3 --dns $dns_server_ip localhost:5000:appserver
 ```
 
 Check the running containers :
