@@ -70,7 +70,7 @@ Running a `dnsserver` node :
 $ docker run -d -name dnsserver -h dnsserver -dns localhost localhost:5000:dnsserver
 ```
 
-We have to get the IP Address of the container. It will be used as the cluster name for the other nodes to join.
+We have to get the IP Address of the container. It will be used as the serf cluster name for the other nodes to join.
 
 ```
 $ dns_server_ip=$(docker ps | grep localhost:5000:dnsserver | awk '{print $1}' | sed -n '1 p' | xargs docker inspect | grep IPAddress | cut -d'"' -f4)
