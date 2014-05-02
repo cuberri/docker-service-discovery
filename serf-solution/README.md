@@ -23,7 +23,7 @@ Starting and stopping nodes
 
 ## Launch a private docker registry
 
-The containers are not pushed to any public repository. You need to use your repository our launch a temporary private one :
+The containers are not pushed to any public registry. You need to use your registry our launch a temporary private one :
 
 ```
 $ docker run -d -p 5000:5000 registry
