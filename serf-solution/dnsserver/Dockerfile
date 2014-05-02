@@ -21,7 +21,7 @@ RUN mkdir -p /etc/dnsmasq-docker
 ADD dnsmasq.conf /etc/dnsmasq.conf
 
 # install serf
-RUN curl -L -o /tmp/serf.zip https://dl.bintray.com/mitchellh/serf/0.4.1_linux_386.zip && unzip -d /usr/local/bin /tmp/serf.zip
+RUN curl -L -o /tmp/serf.zip https://dl.bintray.com/mitchellh/serf/0.5.0_linux_386.zip && unzip -d /usr/local/bin /tmp/serf.zip
 ADD serf-event-handler.sh /home/dnsserver/serf-event-handler.sh
 RUN chmod +x /home/dnsserver/serf-event-handler.sh
 
