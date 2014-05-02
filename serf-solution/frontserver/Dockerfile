@@ -7,9 +7,9 @@
 #
 # VERSION 1.0.0 - based on dduportal initial work (https://github.com/dduportal/ddu-dockers)
 #
-# DOCKER-VERSION 0.7.5
+# DOCKER-VERSION 0.9.0
 
-FROM base
+FROM ubuntu
 
 MAINTAINER Christophe Uberri <cuberri@gmail.com>
 
